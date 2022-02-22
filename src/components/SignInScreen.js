@@ -3,11 +3,13 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import firebase from '../firebase';
 
 // Configure FirebaseUI.
+const provider = new firebase.auth.OAuthProvider('microsoft.com');
 const uiConfig = {
   signInFlow: 'popup',
   signInSuccessUrl: '/',
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    provider.providerId,
   ],
 };
 
